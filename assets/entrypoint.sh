@@ -14,10 +14,10 @@ if [ "${MONGO_DB}x" != "x" ]; then
 			echo "Notice: unpacking"
 			tar xzf dump.tar.gz
 			echo "Notice: completed"
-			if [ -d coral/${MONGO_DB} ]; then
+			if [ -d coral/ ]; then
 				echo 'Found database dump'
 			fi
-			mongorestore --quiet --db ${MONGO_DB} coral/${MONGO_DB}
+			mongorestore --quiet --db ${MONGO_DB} coral/
 		fi
 	else
 		echo "Found, using existing one"
