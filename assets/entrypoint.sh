@@ -30,7 +30,7 @@ if [ "${MONGO_USER}x" != "x" -a "${MONGO_PASS}x" != "x" -a "${MONGO_DB}x" != "x"
 	echo 'show users' | mongo --quiet admin | grep ${MONGO_USER}
 	if [ $? -gt 0 ]; then
 		echo "Not found, creating..."
-		echo "db.createUser({user:'${MONGO_USER}',pwd:'${MONGO_PASS}',roles:[{role:'root',db:'admin'}]})" | mongo --quiet admin
+		echo "db.createUser({user:'${MONGO_USER}',pwd:'${MONGO_PASS}',roles:[{role:'root',db:'coral'}]})" | mongo --quiet admin
 		if [ $? -gt 0 ]; then
 			echo 'Failed'
 		else
